@@ -1,0 +1,89 @@
+<h2>Weather Forecast Dashboard</h2>
+<form method="POST">
+    <div style="display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px;">
+        <a href="/history.html" class="btn btn-info" style="margin-right: auto; color: #ff7e5f; text-decoration: none;">View Search History</a>
+    </div>
+
+    <input type="text" name="city" placeholder="Enter City" required>
+    <button type="submit">Get Forecast</button>
+</form>
+
+{% if plot_url %}
+    <div>{{ plot_url|safe }}</div>
+{% endif %}
+
+<a href="/logout">Logout</a>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #6a11cb, #2575fc);
+        color: #fff;
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 2.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+
+    input[type="text"] {
+        padding: 12px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        margin-right: 10px;
+        width: 300px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1rem;
+        color: #fff;
+        background: #ff7e5f;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease;
+    }
+
+    button:hover {
+        background: #feb47b;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #ff7e5f;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: #feb47b;
+        text-decoration: underline;
+    }
+
+    div {
+        text-align: center;
+        margin-top: 30px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+</style>
